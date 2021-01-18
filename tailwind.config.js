@@ -8,19 +8,15 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      display: ['Gilroy', 'sans-serif'],
-      body: ['Graphik', 'sans-serif'],
+      display: ['Lato', 'sans-serif'],
+      body: ['Open Sans', 'sans-serif'],
     },
     colors: {
-      green: {
-        lightest: '#DADDD8',
-        light: '#C7D59F',
-        medium: '#B7CE63',
-        dark: '#8FB339',
-        darkest: '#4B5842',
-      },
-      white: '#ffffff',
-      gray: '#2d3748',
+      primary: '#9CA27B',
+      secondary: '#A38D6D',
+      black: '#4B4B4B',
+      grey: '#F2F2F2',
+      white: '#FFFFFF',
     },
   },
   variants: {
