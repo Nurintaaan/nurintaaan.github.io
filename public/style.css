@@ -4,13 +4,11 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Lato', sans-serif;	
+	font-family: 'Lato', sans-serif;
+	color: #4B4B4B;
 }
 
 body, p {
 	font-family: 'Open Sans', sans-serif;
-}
-.nav a.active {
-  background: #B7CE63;
-  color: white;
+	color: #4B4B4B;
 }

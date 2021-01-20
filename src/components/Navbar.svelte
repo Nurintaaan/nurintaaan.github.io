@@ -1,31 +1,51 @@
 <script>
-  import RouterLink from '@spaceavocado/svelte-router/component/link';
+  let links = [
+    {
+      title: 'home',
+      target: 'home',
+    },
+    {
+      title: 'work',
+      target: 'work',
+    },
+    {
+      title: 'project',
+      target: 'project',
+    },
+    {
+      title: 'contact me',
+      target: 'contact',
+    },
+  ];
 
-  export let routes;
+  let isActive = 'home';
+  let src = './images/diamond.svg';
 </script>
 
 <nav class="flex items-center justify-between flex-wrap p-6">
   <div class="flex items-center flex-shrink-0 mr-6">
-    <span class="font-semibold text-xl tracking-tight">Svelte Boilerplate</span>
+    <img {src} alt="Diamond Logo" class="ml-8" />
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    <ul class="text-sm lg:flex-grow">
-      {#each routes as route}
-        <li
-          class="nav block mt-4 lg:inline-block lg:mt-0 hover:text-white
-            hover:bg-green-medium mr-4">
-          <RouterLink to={route.path}>{route.name}</RouterLink>
-        </li>
-      {/each}
-    </ul>
+    <div class="lg:flex-grow" />
     <div>
-      <a
-        href="#"
-        class="inline-block text-sm px-4 py-2 leading-none border
-          border-green-dark rounded text-green-dark hover:bg-green-dark
-          hover:text-white mt-4 lg:mt-0">
-        Hire Me
-      </a>
+      {#each links as link}
+      <li
+        class="nav block lg:inline-block mx-4"
+        class:active="{isActive === link.target}"
+        on:click="{() => isActive = link.target}"
+      >
+        <a href="{`#${link.target}`}">        
+          { link.title.toUpperCase() }
+        </a>
+      </li>
+      {/each}
     </div>
   </div>
 </nav>
+
+<style>
+  li:hover, .active {
+    border-bottom: 4px solid #9CA27B;
+  }
+</style>
