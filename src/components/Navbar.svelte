@@ -53,9 +53,9 @@
   <div class="overlay" />
   <div class="block bg-lightGrey mobile-navbar">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <a class="nav block lg:inline-block pt-4 text-sm" on:click="{() => isShowSmallNavbar = false}">
+      <div class="nav block lg:inline-block pt-4 text-sm" on:click="{() => isShowSmallNavbar = false}">
         <img src={closeSrc} alt="Close Icon" class="lg:ml-8 w-3.5" />
-      </a>
+      </div>
       {#each links as link}
       <a 
         href="{`#${link.target}`}"
@@ -80,7 +80,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 16px;
+    padding: 16px 50px 16px 16px;
     position: fixed;
     z-index: 99;
   }
