@@ -1,28 +1,32 @@
+
 <script>
-  let count = 0;
-
-  $: if (count >= 10) {
-    alert(`count is dangerously high!`);
-    count = 9;
-  }
-
-  function handleClick() {
-    count += 1;
-  }
+  let leavesSrc = './images/leaves.png';
+  let profileSrc = './images/profile_picture.png';
 </script>
 
-<div class="flex flex-col justify-center">
-  <h1 class="text-center text-6xl m-2 mb-4">Hello World!</h1>
-  <p class="text-center m-2 text-gray">
-    This is Boilerplate for svelte application
-  </p>
-  <div class="flex flex-row justify-center">
-    <button
-      class="border border-green-dark rounded text-green-dark
-        hover:bg-green-dark hover:text-white mt-4 p-4"
-      data-testid="counter-button"
-      on:click={handleClick}>
-      Count is {count}
-    </button>
+<div class="flex flex-col h-screen ">
+  <img src={profileSrc} alt="profile picture" class="w-2/4 m-auto my-4" />
+  <div class="p-4">
+    <h1 class="m-2 text-left text-gray font-lato font-bold text-left tracking-widest text-lg">
+      NUR INTAN
+    </h1>
+    <p class="m-2 text-left text-gray">
+      Passionate Front End Developer
+    </p>
+    <hr class="divider" />
+    <p class="text-left m-2 text-gray text-sm leading-loose">
+      "I mix eye bags and chocolate to make web looks beautiful and functional. I love to learn about optimization and clean code 🌱”
+    </p>
   </div>
+  <img src={leavesSrc} alt="leaves" class="absolute right-0 bottom-0 w-3/4 lg:w-2/4"/>
 </div>
+
+<style>
+  .divider {
+    background: #9CA27B;
+    border: 3px solid #9CA27B;
+    width: 80%;
+    margin-left: 6px; 
+    margin-bottom: 24px;
+  }
+</style> 
