@@ -20,7 +20,7 @@
   createRouter({ routes });
 </script>
 
-<main class="flex flex-col bg-lightGrey">
+<main class="flex flex-col h-screen bg-lightGrey">
   <Navbar routes={navigation} />
   <RouterView />
   <Footer />
