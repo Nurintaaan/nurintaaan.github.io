@@ -25,7 +25,7 @@
   let isShowSmallNavbar = false;
 </script>
 
-<nav class="flex items-center justify-between flex-wrap p-6">
+<nav class="flex items-center justify-between flex-wrap p-6 navbar">
   <div class="flex items-center flex-shrink-0">
     <img src={diamondSrc} alt="Diamond Logo" class="lg:ml-8 w-10" />
   </div>
@@ -93,5 +93,9 @@
     left:0;
     right:0;
     bottom:0;
+  }
+
+  .navbar {
+    height: 10vh;
   }
 </style>
