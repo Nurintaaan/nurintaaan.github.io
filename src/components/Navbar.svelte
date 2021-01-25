@@ -5,12 +5,12 @@
       target: 'home',
     },
     {
-      title: 'work',
-      target: 'work',
-    },
-    {
       title: 'project',
       target: 'project',
+    },
+    {
+      title: 'work',
+      target: 'work',
     },
     {
       title: 'contact me',
