@@ -8,6 +8,25 @@
   let laptopSrc = './images/laptop.png';
   let mobileSrc = './images/mobile.png';
 
+  let companies = [
+    {
+      name: 'Kudo',
+      imgSrc: './images/kudo.png',
+    },
+    {
+      name: 'Hijup',
+      imgSrc: './images/hijup.png',
+    },
+    {
+      name: 'Tokopedia',
+      imgSrc: './images/tokopedia.png',
+    },
+    {
+      name: 'Bukalapak',
+      imgSrc: './images/bukalapak.png',
+    },
+  ]
+
 </script>
 
 <div class="flex flex-col lg:h-screen lg:justify-center half-full" id="home">
@@ -20,7 +39,7 @@
       <p class="m-2 text-left text-gray lg:text-xl">
         Passionate Front End Developer
       </p>
-      <hr class="divider lg:my-8" />
+      <hr class="divider divider--half lg:my-8" />
       <p class="text-left m-2 text-gray text-xs leading-loose lg:text-sm">
         "I mix eye bags and chocolate to make web looks beautiful and functional. I love to learn about optimization and clean code 🌱”
       </p>
@@ -47,14 +66,24 @@
       <img src={leavesSecondarySrc} alt="leaves" class="w-1/4 h-1/4" />
   </div>
 </div>
-<div class="bg-lightGrey h-screen z-10">
-  
+<div class="bg-lightGrey z-10" id="work">
+  <p class="mt-10 text-center text-gray lg:text-2xl text-sm bottom-border pb-3">
+    Part of The Team at Top Indonesia Ecommerce
+  </p>
+  <div class="flex justify-between lg:mx-40">
+    {#each companies as company}
+      <img src={company.imgSrc} alt="{company.name}" class="p-5" />
+    {/each}
+  </div>
 </div>
 
 <style>
   .divider {
     background: #9CA27B;
     border: 3px solid #9CA27B;
+  }
+
+  .divider--half {
     width: 80%;
     margin-left: 6px; 
     margin-bottom: 24px;
@@ -63,9 +92,13 @@
   .half-full {
     height: 83vh;
   }
+  
   .flip-horizontally {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+  }
+  .bottom-border {
+    border-bottom: 3px solid #9CA27B;
   }
 
   @media only screen and (max-width: 768px) {
