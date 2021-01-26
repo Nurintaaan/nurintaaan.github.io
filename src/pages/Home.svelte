@@ -66,13 +66,14 @@
       <img src={leavesSecondarySrc} alt="leaves" class="w-1/4 h-1/4" />
   </div>
 </div>
-<div class="bg-lightGrey z-10" id="work">
-  <p class="mt-10 text-center text-gray lg:text-2xl text-sm bottom-border pb-3">
+<div class="bg-lightGrey z-10 flex flex-col justify-center" id="work">
+  <p class="mt-10 text-center text-gray lg:text-2xl text-sm pb-3">
     Part of The Team at Top Indonesia Ecommerce
   </p>
-  <div class="flex justify-between lg:mx-40">
+  <hr class="divider w-1/4 m-auto"/>
+  <div class="flex justify-between lg:mx-40 lg:p-20 p-10 flex-wrap">
     {#each companies as company}
-      <img src={company.imgSrc} alt="{company.name}" class="p-5" />
+      <img src={company.imgSrc} alt="{company.name}" class="p-5 w-1/2 lg:w-1/4" />
     {/each}
   </div>
 </div>
@@ -80,7 +81,7 @@
 <style>
   .divider {
     background: #9CA27B;
-    border: 3px solid #9CA27B;
+    border: 2px solid #9CA27B;
   }
 
   .divider--half {
@@ -96,9 +97,6 @@
   .flip-horizontally {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-  }
-  .bottom-border {
-    border-bottom: 3px solid #9CA27B;
   }
 
   @media only screen and (max-width: 768px) {
