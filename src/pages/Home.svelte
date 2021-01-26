@@ -4,9 +4,12 @@
 
   let leavesSrc = './images/leaves.png';
   let leavesSecondarySrc = './images/leaves_secondary.png';
+  let leavesSecondaryTwoSrc = './images/leaves_secondary2.png';
   let profileSrc = './images/profile_picture.png';
   let laptopSrc = './images/laptop.png';
   let mobileSrc = './images/mobile.png';
+  let githubSrc = './images/github.png';
+  let linkedinSrc = './images/linkedin.png';
 
   let companies = [
     {
@@ -77,6 +80,24 @@
     {/each}
   </div>
 </div>
+<div class="bg-white flex flex-col lg:flex-row justify-center relative" id="contact">
+  <img src={leavesSecondaryTwoSrc} alt="leaves" class="w-1/4 h-1/4 hidden lg:block" />
+  <div class="flex flex-col justify-center">
+    <p class="font-lato font-bold text-gray text-2xl text-center lg:text-left mt-10 lg:ml-16">
+      Wanna know more?
+    </p>
+    <p class="text-center text-gray text-sm text-center lg:text-left lg:ml-16">
+      Let’s get connected
+    </p>
+    <div class="flex justify-center py-10 lg:py-2">
+      <img src={githubSrc} alt="github" class="p-4">
+      <img src={linkedinSrc} alt="linkedin" class="p-4">
+    </div>
+  </div>
+  <div class="absolute corner lg:hidden">  
+    <img src={leavesSecondaryTwoSrc} alt="leaves" class="w-1/2 h-1/2 z-0" />
+  </div>
+</div>
 
 <style>
   .divider {
@@ -103,5 +124,10 @@
     .half-full {
       height: 86vh;
     }
+  }
+
+  .corner {
+    bottom: -30%;
+    left: -30%;
   }
 </style> 
