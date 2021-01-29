@@ -1,4 +1,7 @@
 <script>
+  import { fade } from 'svelte/transition';
+  let diamond = './images/diamond.svg';
+
   let links = [
     {
       title: 'home',
@@ -19,43 +22,51 @@
   ];
 
   let isActive = 'home';
-  let diamondSrc = './images/diamond.svg';
-  let closeSrc = './images/close.svg';
-
   let isShowSmallNavbar = false;
 </script>
 
 <nav class="flex items-center justify-between flex-wrap p-6 navbar">
   <div class="flex items-center flex-shrink-0">
-    <img src={diamondSrc} alt="Diamond Logo" class="lg:ml-8 w-10" />
+    <img 
+      src={diamond} 
+      alt="Diamond Logo" 
+      class="lg:ml-8 w-10"
+    />
   </div>
-  <div class="block lg:flex items-center w-auto hidden">
-    <div>
-      {#each links as link}
-      <li
-        class="nav block lg:inline-block mx-4 text-sm"
-        class:active="{isActive === link.target}"
-        on:click="{() => isActive = link.target}"
-      >
-        <a href="{`#${link.target}`}">        
-          { link.title.toUpperCase() }
-        </a>
-      </li>
-      {/each}
-    </div>
-  </div>
+  <ul class="block lg:flex items-center w-auto hidden">
+    {#each links as link}
+    <li
+      class="nav block lg:inline-block mx-4 text-sm"
+      class:active="{isActive === link.target}"
+      on:click="{() => isActive = link.target}"
+    >
+      <a href="{`#${link.target}`}">        
+        { link.title.toUpperCase() }
+      </a>
+    </li>
+    {/each}
+  </ul>
 
-  <a class="block lg:hidden text-xl" on:click="{() => isShowSmallNavbar = true}">
+  <!-- Mobile Navbar -->  
+  <a 
+    class="block lg:hidden text-xl" 
+    on:click="{() => isShowSmallNavbar = true}"
+  >
     <i class="fa fa-bars" aria-hidden="true" />
   </a>
 
   {#if isShowSmallNavbar}
-  <div class="overlay" />
-  <div class="block bg-lightGrey mobile-navbar">
+  <div 
+    class="overlay" 
+    transition:fade 
+    on:click="{() => isShowSmallNavbar = false}"
+  />
+  
+  <div 
+    class="block bg-lightGrey mobile-navbar" 
+    transition:fade
+  >
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <div class="nav block lg:inline-block pt-4 text-sm" on:click="{() => isShowSmallNavbar = false}">
-        <img src={closeSrc} alt="Close Icon" class="lg:ml-8 w-3.5" />
-      </div>
       {#each links as link}
       <a 
         href="{`#${link.target}`}"
@@ -69,6 +80,8 @@
     </div>
   </div>
   {/if}
+  <!-- End of Mobile Navbar -->
+
 </nav>
 
 <style>
@@ -86,7 +99,7 @@
   }
 
   .overlay {
-    position: absolute;
+    position: fixed;
     z-index: 98;
     background: rgba(0, 0, 0, 0.5);
     top:0;

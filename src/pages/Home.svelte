@@ -1,3 +1,4 @@
+<!-- TODO: refactor all of this -->
 
 <script>
   import FloatingButton from '../components/FloatingButton.svelte';
@@ -28,7 +29,9 @@
       name: 'Bukalapak',
       imgSrc: './images/bukalapak.png',
     },
-  ]
+  ];
+
+  let tempProject = './images/project_1.png';
 
 </script>
 
