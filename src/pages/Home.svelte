@@ -2,6 +2,7 @@
 
 <script>
   import FloatingButton from '../components/FloatingButton.svelte';
+  import Slider from '../components/Slider.svelte';
 
   let leavesSrc = './images/leaves.png';
   let leavesSecondarySrc = './images/leaves_secondary.png';
@@ -66,6 +67,8 @@
 
   <img src={laptopSrc} alt="Laptop Screen" class="m-auto my-4 hidden lg:block" />
   <img src={mobileSrc} alt="Mobile Screen" class="m-auto my-4 lg:hidden" />
+
+  <Slider />
 
   <div class="flex justify-between z-1 bottom-0">
       <img src={leavesSecondarySrc} alt="leaves" class="flip-horizontally w-1/4 h-1/4" />
