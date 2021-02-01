@@ -65,9 +65,6 @@
    With some prior knowledge on UI/UX and Front end
   </p>
 
-  <img src={laptopSrc} alt="Laptop Screen" class="m-auto my-4 hidden lg:block" />
-  <img src={mobileSrc} alt="Mobile Screen" class="m-auto my-4 lg:hidden" />
-
   <Slider />
 
   <div class="flex justify-between z-1 bottom-0">

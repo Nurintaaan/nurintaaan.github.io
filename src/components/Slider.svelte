@@ -17,19 +17,18 @@
 	const isNotActive = (index) => (!isActive(index) && !isActiveAround(index));
 </script>
 
-<!-- TODO make it center -->
-<div class="inline-flex justify">
-	<!-- TODO: put image -->
+<div class="flex flex-col justify-center">
+	<img src="{`./images/project_${activeIndex+1}.png`}" alt="Project" class="w-1/2 m-auto py-4" />		
+	<div class="inline-flex m-auto">
+		{#each data as datum , i}
+			<div 
+				class:slider--active="{isActive(i)}" 
+				class:slider--big="{isActiveAround(i)}" 
+				class:slider="{isNotActive(i)}" 
+			 />
 
-	<!-- TODO: make it dynamic -->
-	{#each data as datum , i}
-		<div 
-			class:slider--active="{isActive(i)}" 
-			class:slider--big="{isActiveAround(i)}" 
-			class:slider="{isNotActive(i)}" 
-		 />
-
-	{/each}
+		{/each}
+	</div>
 </div>
 
 <style>
