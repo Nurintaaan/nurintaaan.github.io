@@ -1,4 +1,3 @@
-<!-- TODO: import hammer js implement pan left pan right https://github.com/beomy/svelte-hammer -->
 <!-- TODO: make props -->
 <script>
 	// export let data;
@@ -12,14 +11,32 @@
 
 	let activeIndex = 2;
 
-	const isActive = (index) => (activeIndex === index);
-	const isActiveAround = (index) => (activeIndex-1 === index || activeIndex+1 === index);
-	const isNotActive = (index) => (!isActive(index) && !isActiveAround(index));
+	$: isActive = (index) => (activeIndex === index);
+	$: isActiveAround = (index) => (activeIndex-1 === index || activeIndex+1 === index);
+	$: isNotActive = (index) => (!isActive(index) && !isActiveAround(index));
+
+	const swipeLeft = () => {
+		if(activeIndex > 0) {
+			activeIndex = activeIndex - 1;
+		}
+	}
+
+	const swipeRight = () => {
+		if(activeIndex < data.length-1) {
+			activeIndex = activeIndex + 1;
+		}
+	}
 </script>
 
 <div class="flex flex-col justify-center">
-	<img src="{`./images/project_${activeIndex+1}.png`}" alt="Project" class="w-1/2 m-auto py-4" />		
-	<div class="inline-flex m-auto">
+	<img 
+		src="{`./images/project_${activeIndex+1}.png`}" 
+		alt="Project" 
+		class="w-3/4 lg:w-1/2 m-auto my-4 shadow-md" 
+	/>		
+	<div 
+		class="inline-flex m-auto"
+	>
 		{#each data as datum , i}
 			<div 
 				class:slider--active="{isActive(i)}" 
@@ -28,6 +45,21 @@
 			 />
 
 		{/each}
+	</div>
+	<!-- TODO: make it like arrow -->
+	<div class="inline-flex m-auto mt-4">
+		<button 
+			class="p-4 bg-secondary mr-4 text-white rounded" 
+			on:click="{() => swipeLeft()}"
+		>
+			LEFT
+		</button>
+		<button 
+			class="p-4 bg-secondary text-white rounded" 
+			on:click="{() => swipeRight()}"
+		> 
+			RIGHT
+		</button>
 	</div>
 </div>
 
