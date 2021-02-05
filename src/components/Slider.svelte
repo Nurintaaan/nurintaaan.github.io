@@ -1,16 +1,30 @@
 <!-- TODO: make props -->
 <script>
 	// export let data;
+	import { createEventDispatcher } from 'svelte';
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
 	import SwiperCore, { Navigation } from 'swiper';
 
 	SwiperCore.use([Navigation]);
+	const dispatch = createEventDispatcher();
 
 	let data = [
-		{src: './images/project_1.png'},
-		{src: './images/project_2.png'},
-		{src: './images/project_3.png'},
-		{src: './images/project_4.png'},
+		{
+			name: 'svelte',
+			src: './images/project_1.png'
+		},
+		{
+			name: 'println',
+			src: './images/project_2.png'
+		},
+		{
+			name: 'sevy',
+			src: './images/project_3.png'
+		},
+		{
+			name: 'learningBuddies',
+			src: './images/project_4.png'
+		},
 	];
 
 	let activeIndex = 0;
@@ -30,6 +44,12 @@
 			activeIndex = activeIndex + 1;
 		}
 	}
+
+	function emitShowModal(project) {
+		dispatch('showModal', {
+			project,
+		});
+	}
 </script>
 
 <div>
@@ -46,6 +66,7 @@
 					src="{datum.src}" 
 					alt="Project" 
 					class="w-3/4 lg:w-1/2 m-auto my-4 shadow-md" 
+					on:click={() => emitShowModal(datum.name)}
 				/>
 		    </SwiperSlide>
 		{/each}

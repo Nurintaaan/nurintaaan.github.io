@@ -3,6 +3,8 @@
 <script>
   import FloatingButton from '../components/FloatingButton.svelte';
   import Slider from '../components/Slider.svelte';
+  import Modal from '../components/Modal.svelte';
+  import projects from './projects.js';
 
   let leavesSrc = './images/leaves.png';
   let leavesSecondarySrc = './images/leaves_secondary.png';
@@ -33,6 +35,16 @@
   ];
 
   let tempProject = './images/project_1.png';
+
+  let modalData;
+
+  let isModalOpen = false;
+
+  const showModal = (event) => {
+    modalData = projects[event.detail.project];
+    console.log(modalData);
+    isModalOpen = true;
+  }
 
 </script>
 
@@ -65,7 +77,7 @@
    With some prior knowledge on UI/UX and Front end
   </p>
 
-  <Slider />
+  <Slider on:showModal={showModal}/>
 
   <div class="flex justify-between z-1 bottom-0">
       <img src={leavesSecondarySrc} alt="leaves" class="flip-horizontally w-1/4 h-1/4" />
@@ -101,6 +113,10 @@
     <img src={leavesSecondaryTwoSrc} alt="leaves" class="w-1/2 h-1/2 z-0" />
   </div>
 </div>
+
+{#if isModalOpen}
+  <Modal data={modalData} on:dismissClicked={() => isModalOpen = false}/>
+{/if}
 
 <style>
   .divider {
