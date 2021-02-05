@@ -12,3 +12,13 @@ body, p {
 	font-family: 'Open Sans', sans-serif;
 	color: #4B4B4B;
 }
+
+.swiper-button-prev, .swiper-button-next {
+	color: #9CA27B;
+}
+
+@media only screen and (max-width: 768px) {
+  	.swiper-button-prev, .swiper-button-next {
+		display: none;
+	}
+}

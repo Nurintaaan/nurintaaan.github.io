@@ -33,7 +33,6 @@
 </script>
 
 <div>
-	<!-- TODO: change navigation color, remove navigation on small screen -->
 	<Swiper
 	   slidesPerView={1}
 	   on:slideNextTransitionEnd={swipeRight}
@@ -93,8 +92,5 @@
 		margin-right: 2px;
 		border-radius: 50%;
 		background-color: #C5C5C5;
-	}
-	.swiper-button-next {
-		color: #9CA27B;
 	}
 </style>
