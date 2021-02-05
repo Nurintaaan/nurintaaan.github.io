@@ -42,7 +42,6 @@
 
   const showModal = (event) => {
     modalData = projects[event.detail.project];
-    console.log(modalData);
     isModalOpen = true;
   }
 
