@@ -18,18 +18,22 @@
   let companies = [
     {
       name: 'Kudo',
+      label: 'kudo',
       imgSrc: './images/kudo.png',
     },
     {
       name: 'Hijup',
+      label: 'hijup',
       imgSrc: './images/hijup.png',
     },
     {
       name: 'Tokopedia',
+      label: 'tokopedia',
       imgSrc: './images/tokopedia.png',
     },
     {
       name: 'Bukalapak',
+      label: 'bukalapak',
       imgSrc: './images/bukalapak.png',
     },
   ];
@@ -42,6 +46,11 @@
 
   const showModal = (event) => {
     modalData = projects[event.detail.project];
+    isModalOpen = true;
+  }
+
+  const showCompanyModal = (modalName) => {
+    modalData = projects[modalName];
     isModalOpen = true;
   }
 
@@ -90,7 +99,7 @@
   <hr class="divider w-1/4 m-auto"/>
   <div class="flex justify-between lg:mx-40 lg:p-20 p-10 flex-wrap">
     {#each companies as company}
-      <img src={company.imgSrc} alt="{company.name}" class="p-5 w-1/2 lg:w-1/4" />
+      <img src={company.imgSrc} alt="{company.name}" class="p-5 w-1/2 lg:w-1/4" on:click={() => showCompanyModal(company.label)} />
     {/each}
   </div>
 </div>
