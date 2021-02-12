@@ -1,5 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
+  import { scrollTo } from "svelte-scrollto";
+
   let diamond = './images/diamond.svg';
 
   let links = [
@@ -23,6 +25,11 @@
 
   let isActive = 'home';
   let isShowSmallNavbar = false;
+
+  const scrollToScreen = (target) => {
+    scrollTo({element: `#${target}`});
+    isActive = target;
+  } 
 </script>
 
 <nav class="flex items-center justify-between flex-wrap p-6 navbar">
@@ -40,7 +47,7 @@
       class:active="{isActive === link.target}"
       on:click="{() => isActive = link.target}"
     >
-      <a href="{`#${link.target}`}">        
+      <a class="cursor-pointer" on:click={() => scrollTo({element: `#${link.target}`})} >        
         { link.title.toUpperCase() }
       </a>
     </li>
@@ -69,10 +76,9 @@
     <div class="px-2 pt-2 pb-3 space-y-1">
       {#each links as link}
       <a 
-        href="{`#${link.target}`}"
-        class="nav block lg:inline-block pt-4 text-sm"
+        class="nav block lg:inline-block pt-4 text-sm cursor-pointer"
         class:active="{isActive === link.target}"
-        on:click="{() => isActive = link.target}"
+        on:click="{() => scrollToScreen(link.target)}"
       >        
         { link.title.toUpperCase() }
       </a>

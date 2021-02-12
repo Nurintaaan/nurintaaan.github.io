@@ -74,7 +74,7 @@
     <span class="w-1/4 lg:block hidden" />
     <img src={profileSrc} alt="profile picture" class="w-1/4 m-auto hidden lg:block" />
   </div>
-  <img src={leavesSrc} alt="leaves" class="absolute right-0 bottom-0 w-3/4 sm:bottom-2 lg:w-2/4"/>
+  <!-- <img src={leavesSrc} alt="leaves" class="absolute right-0 bottom-0 w-3/4 sm:bottom-2 lg:w-2/4"/> -->
 </div>
 <FloatingButton/>
 <div class="flex flex-col lg:h-screen bg-white" id="project">

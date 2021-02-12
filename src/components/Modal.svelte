@@ -34,7 +34,7 @@
               {/if}
               {#if data.link}
                 <div class="mt-4">
-                  <a href={data.link}> 
+                  <a href={data.link} class="text-xs lg:text-base"> 
                     {data.link}
                   </a>
                 </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="mt-8 mb-2">
               {#each data.skills as skill}
-                <span class="lg:text-base text-sm rounded-full py-1 px-3 mr-2" style="background-color: {skill.background}; color: {skill.color}">
+                <span class="lg:text-base text-sm rounded-full py-1 px-3 mr-2 mt-2" style="background-color: {skill.background}; color: {skill.color}">
                   {skill.name}
                 </span>
               {/each}
