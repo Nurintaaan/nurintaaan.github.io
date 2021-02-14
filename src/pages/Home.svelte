@@ -1,6 +1,6 @@
 <!-- TODO: refactor all of this -->
 
-<script>
+<script> 
   import FloatingButton from '../components/FloatingButton.svelte';
   import Slider from '../components/Slider.svelte';
   import Modal from '../components/Modal.svelte';
@@ -54,6 +54,10 @@
     isModalOpen = true;
   }
 
+  const goTo = (link) => {
+    window.location.assign(link);
+  }
+
 </script>
 
 <div class="flex flex-col lg:h-screen lg:justify-center half-full" id="home">
@@ -74,10 +78,10 @@
     <span class="w-1/4 lg:block hidden" />
     <img src={profileSrc} alt="profile picture" class="w-1/4 m-auto hidden lg:block" />
   </div>
-  <!-- <img src={leavesSrc} alt="leaves" class="absolute right-0 bottom-0 w-3/4 sm:bottom-2 lg:w-2/4"/> -->
+  <img src={leavesSrc} alt="leaves" class="absolute right-0 bottom-0 w-3/4 sm:bottom-2 lg:w-2/6"/>
 </div>
 <FloatingButton/>
-<div class="flex flex-col lg:h-screen bg-white" id="project">
+<div class="flex flex-col lg:h-screen bg-white z-10" id="project">
   <p class="mt-10 text-center text-gray lg:text-2xl text-sm">
     Using skill and passion to create this project
   </p>
@@ -99,7 +103,7 @@
   <hr class="divider w-1/4 m-auto"/>
   <div class="flex justify-between lg:mx-40 lg:p-20 p-10 flex-wrap">
     {#each companies as company}
-      <img src={company.imgSrc} alt="{company.name}" class="p-5 w-1/2 lg:w-1/4" on:click={() => showCompanyModal(company.label)} />
+      <img src={company.imgSrc} alt="{company.name}" class="w-1/4 lg:w-1/6 p-2 cursor-pointer" on:click={() => showCompanyModal(company.label)} />
     {/each}
   </div>
 </div>
@@ -113,8 +117,8 @@
       Let’s get connected
     </p>
     <div class="flex justify-center py-10 lg:py-2">
-      <img src={githubSrc} alt="github" class="p-4">
-      <img src={linkedinSrc} alt="linkedin" class="p-4">
+      <img src={githubSrc} alt="github" class="p-4 cursor-pointer" on:click={() => goTo('https://github.com/Nurintaaan/')}>
+      <img src={linkedinSrc} alt="linkedin" class="p-4 cursor-pointer" on:click={() => goTo('https://www.linkedin.com/in/nur-intan-alatas/')}>
     </div>
   </div>
   <div class="absolute corner lg:hidden">  

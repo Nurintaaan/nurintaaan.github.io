@@ -65,7 +65,7 @@
 		    	<img 
 					src="{datum.src}" 
 					alt="Project" 
-					class="w-3/4 lg:w-1/2 m-auto my-4 shadow-md" 
+					class="w-3/4 lg:w-1/2 m-auto my-4 shadow-md cursor-pointer" 
 					on:click={() => emitShowModal(datum.name)}
 				/>
 		    </SwiperSlide>

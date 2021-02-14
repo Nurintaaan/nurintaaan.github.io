@@ -101,17 +101,17 @@ const projects = {
 	      {
 	        name: 'Flow',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#0085CA',
 	      },
 	      {
 	        name: 'React',
-	        color: '#ffffff',
-	        background: '#ff3e00',
+	        color: '#61DAFB',
+	        background: '#222222',
 	      },
 	      {
 	        name: 'Material.io',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#000000',
 	      },
 	 	]
 	 },
@@ -127,18 +127,18 @@ const projects = {
 	 	skills: [
 	 	  {
 	        name: 'Python',
-	        color: '#ffffff',
-	        background: '#ff3e00',
+	        color: '#FFD03F',
+	        background: '#3772A4',
 	      },
 	      {
 	        name: 'Tornado',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#000000',
 	      },
 	      {
 	        name: 'Docker',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#0091E2',
 	      },
 	 	]
 	 },
@@ -154,17 +154,17 @@ const projects = {
 		  {
 	        name: 'Go',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#74CEDD',
 	      },
 	      {
 	        name: 'NSQ',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#6699CC',
 	      },
 	      {
 	        name: 'Redis',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#E90002',
 	      },
 	 	]
 	 },
@@ -184,12 +184,12 @@ const projects = {
  		  {
 	        name: 'Vue',
 	        color: '#ffffff',
-	        background: '#ff3e00',
+	        background: '#41B883',
 	      },
 	      {
 	        name: 'Vuex',
 	        color: '#ffffff',
-	        background: '#000000',
+	        background: '#41B883',
 	      },
 	      {
 	        name: 'Jest',
