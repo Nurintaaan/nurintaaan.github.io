@@ -18,8 +18,7 @@
 
     <!-- TODO: center the modal -->
     <!-- This element is to trick the browser into centering the modal contents. -->
-    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-3/4 lg:w-full inset-center" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
       <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
         <div class="sm:flex sm:items-start">
           <div class="mt-3 sm:mt-0 sm:ml-4 text-left">
@@ -47,11 +46,11 @@
                 {/each}
               </ul>
             </div>
-            <div class="mt-8 mb-2">
+            <div class="mt-2 mb-2">
               {#each data.skills as skill}
-                <span class="lg:text-base text-sm rounded-full py-1 px-3 mr-2 mt-2" style="background-color: {skill.background}; color: {skill.color}">
+                <div class="lg:text-base inline-block text-sm rounded-full py-1 px-3 mr-2 mt-3" style="background-color: {skill.background}; color: {skill.color}">
                   {skill.name}
-                </span>
+                </div>
               {/each}
             </div>
           </div>
@@ -60,3 +59,13 @@
     </div>
   </div>
 </div>
+
+<style type="text/css">
+.inset-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+</style>
