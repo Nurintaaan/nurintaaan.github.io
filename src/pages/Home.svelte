@@ -55,7 +55,7 @@
   }
 
   const goTo = (link) => {
-    window.location.assign(link);
+    window.open(link, '_blank');
   }
 
 </script>

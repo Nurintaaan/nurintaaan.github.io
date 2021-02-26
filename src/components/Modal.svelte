@@ -49,7 +49,7 @@
             {#if data.link}
               <div 
                 class="rounded-lg py-3 px-6 mt-4 bg-primary text-center text-white cursor-pointer"
-                on:click={() => window.location.assign(data.link) }
+                on:click={() => window.open(data.link, '_blank') }
               >
                 See Detail
               </div>

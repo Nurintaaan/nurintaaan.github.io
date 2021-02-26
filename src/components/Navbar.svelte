@@ -32,7 +32,7 @@
   } 
 </script>
 
-<nav class="flex items-center justify-between flex-wrap p-6 navbar">
+<nav class="flex items-center justify-between flex-wrap p-3 navbar fixed z-50 bg-lightGrey w-full">
   <div class="flex items-center flex-shrink-0">
     <img 
       src={diamond} 
