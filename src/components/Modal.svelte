@@ -31,13 +31,6 @@
                   {data.startDate} - {data.endDate}
                 </p>
               {/if}
-              {#if data.link}
-                <div class="mt-4">
-                  <a href={data.link} class="text-xs lg:text-base"> 
-                    {data.link}
-                  </a>
-                </div>
-              {/if}
             </div>
             <div class="mt-2">
               <ul class="text-xs lg:text-base text-gray-500 list-disc ml-4">
@@ -53,6 +46,14 @@
                 </div>
               {/each}
             </div>
+            {#if data.link}
+              <div 
+                class="rounded-lg py-3 px-6 mt-4 bg-primary text-center text-white cursor-pointer"
+                on:click={() => window.location.assign(data.link) }
+              >
+                See Detail
+              </div>
+            {/if}
           </div>
         </div>
       </div>
