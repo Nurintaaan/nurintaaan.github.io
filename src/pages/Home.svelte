@@ -144,6 +144,7 @@
 
   .half-full {
     height: 83vh;
+    margin-top: 85px;
   }
   
   .flip-horizontally {
